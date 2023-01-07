@@ -17,9 +17,8 @@ DROP TABLE IF EXISTS maker;
    CREATE TABLE maker (
     id int unsigned AUTO_INCREMENT,
     maker_name VARCHAR(100) NOT NULL,
-    clock_id int,
     PRIMARY KEY(id)
    );
 
-    INSERT INTO maker ( maker_name, clock_id) VALUES ("SEIKO", 1)
-    INSERT INTO maker ( maker_name, clock_id) VALUES ("CITIZEN", 2)
+INSERT INTO maker ( maker_name) VALUES ("SEIKO");
+INSERT INTO maker ( maker_name) VALUES ("CITIZEN");
