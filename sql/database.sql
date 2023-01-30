@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS maker;
    CREATE TABLE maker (
     id int unsigned AUTO_INCREMENT,
     maker_name VARCHAR(100) NOT NULL,
+    maker_image BLOB,
     PRIMARY KEY(id)
    );
 
