@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS clock;
     PRIMARY KEY(id)
   );
 
-  INSERT INTO clock (clock_name, clock_description) VALUES ("スモールワールド","説明が入ります｡");
-  INSERT INTO clock (clock_name, clock_description) VALUES ("パルタージュ","説明が入ります｡");
-  INSERT INTO clock (clock_name, clock_description) VALUES ("シンフォニー","説明が入ります｡");
+  INSERT INTO clock (clock_name, clock_description,maker_id) VALUES ("スモールワールド","説明が入ります｡",1);
+  INSERT INTO clock (clock_name, clock_description,maker_id) VALUES ("パルタージュ","説明が入ります｡",1);
+  INSERT INTO clock (clock_name, clock_description,maker_id) VALUES ("シンフォニー","説明が入ります｡",2);
 
 DROP TABLE IF EXISTS maker;
 
