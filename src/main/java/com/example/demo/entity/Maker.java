@@ -4,6 +4,7 @@ public class Maker {
 
   private int id;
   private String makerName;
+  private String makerImagePath;
 
   public int getId() {
     return id;
@@ -21,8 +22,17 @@ public class Maker {
     this.makerName = makerName;
   }
 
-  public Maker(int id, String makerName) {
+  public String getMakerImagePath() {
+    return makerImagePath;
+  }
+
+  public void setMakerImagePath(String makerImagePath) {
+    this.makerImagePath = makerImagePath;
+  }
+
+  public Maker(int id, String makerName, String makerImagePath) {
     this.id = id;
     this.makerName = makerName;
+    this.makerImagePath = makerImagePath;
   }
 }

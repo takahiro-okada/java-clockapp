@@ -3,10 +3,12 @@ package com.example.demo.controller;
 import com.example.demo.entity.Clock;
 import com.example.demo.service.ClockService;
 import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ClockController {
 
   private final ClockService clockService;
@@ -15,9 +17,10 @@ public class ClockController {
     this.clockService = clockService;
   }
 
-  @RequestMapping("/maker/{makername}")
-  public List<Clock> getMakerClocks(){
-    List<Clock> clocks = clockService.findMakerClocks();
-    return  clocks;
-  }
+   @RequestMapping("/maker/clocks")
+   public List<Clock> getAll() {
+     List<Clock> clock = clockService.findMakerClocks();
+     return clock;
+   }
+
 }

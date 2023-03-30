@@ -3,7 +3,9 @@ package com.example.demo.service;
 import com.example.demo.entity.Clock;
 import com.example.demo.repository.ClockMapper;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ClockServiceImpl implements ClockService{
   private ClockMapper clockMapper;
 
