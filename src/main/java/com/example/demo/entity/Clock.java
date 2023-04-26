@@ -9,7 +9,7 @@ public class Clock {
   private Integer userId;
   private String name;
   private String description;
-  private MultipartFile imagePath;
+  private String imagePath;
   private double latitude;
   private double longitude;
 
@@ -53,11 +53,11 @@ public class Clock {
     this.description = description;
   }
 
-  public MultipartFile getImagePath() {
+  public String getImagePath() {
     return imagePath;
   }
 
-  public void setImagePath(MultipartFile imagePath) {
+  public void setImagePath(String imagePath) {
     this.imagePath = imagePath;
   }
 
@@ -78,7 +78,7 @@ public class Clock {
   }
 
   public Clock(Integer id, Integer makerId, Integer userId, String name, String description,
-               MultipartFile imagePath, double latitude, double longitude) {
+               String imagePath, double latitude, double longitude) {
     this.id = id;
     this.makerId = makerId;
     this.userId = userId;
@@ -88,4 +88,5 @@ public class Clock {
     this.latitude = latitude;
     this.longitude = longitude;
   }
+
 }

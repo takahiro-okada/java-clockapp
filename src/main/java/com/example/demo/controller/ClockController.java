@@ -37,9 +37,9 @@ public class ClockController {
   }
 
   @PostMapping("/api/register")
-  public ResponseEntity<String> registerClock(@RequestParam("file") MultipartFile file, Clock clock) {
+  public ResponseEntity<String> registerClock(@RequestParam("image") MultipartFile file, Clock clock) {
     try {
-      MultipartFile fileName = fileStorageService.storeFile(String.valueOf(file));
+      String fileName = fileStorageService.storeFile(file);
       clock.setImagePath(fileName);
 
       clockService.registerClock(clock);
