@@ -3,8 +3,14 @@ package com.example.demo.entity;
 public class Maker {
 
   private int id;
-  private String makerName;
-  private String makerImagePath;
+  private String name;
+  private String imagePath;
+
+  public Maker(int id, String name, String imagePath) {
+    this.id = id;
+    this.name = name;
+    this.imagePath = imagePath;
+  }
 
   public int getId() {
     return id;
@@ -14,25 +20,20 @@ public class Maker {
     this.id = id;
   }
 
-  public String getMakerName() {
-    return makerName;
+  public String getName() {
+    return name;
   }
 
-  public void setMakerName(String makerName) {
-    this.makerName = makerName;
+  public String getImagePath() {
+    return imagePath;
   }
 
-  public String getMakerImagePath() {
-    return makerImagePath;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public void setMakerImagePath(String makerImagePath) {
-    this.makerImagePath = makerImagePath;
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
   }
 
-  public Maker(int id, String makerName, String makerImagePath) {
-    this.id = id;
-    this.makerName = makerName;
-    this.makerImagePath = makerImagePath;
-  }
 }

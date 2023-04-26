@@ -1,44 +1,45 @@
-CREATE TABLE prefectures (
-  prefecture_id INT PRIMARY KEY,
-  prefecture_name VARCHAR(255) NOT NULL
+CREATE TABLE users (
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE municipalities (
-  municipality_id INT PRIMARY KEY,
-  municipality_name VARCHAR(255) NOT NULL,
-  prefecture_id INT,
-  FOREIGN KEY (prefecture_id) REFERENCES prefectures(prefecture_id)
+CREATE TABLE makers (
+  maker_id INT AUTO_INCREMENT PRIMARY KEY,
+  maker_name VARCHAR(100) NOT NULL,
+  maker_image VARCHAR(255)
 );
 
 CREATE TABLE clocks (
-  clock_id INT PRIMARY KEY,
+  clock_id INT AUTO_INCREMENT PRIMARY KEY,
   clock_name VARCHAR(255) NOT NULL,
-  address VARCHAR(255),
+  description TEXT,
+  clock_image VARCHAR(255),
   latitude DECIMAL(9,6),
   longitude DECIMAL(9,6),
-  description TEXT,
-  municipality_id INT,
-  FOREIGN KEY (municipality_id) REFERENCES municipalities(municipality_id)
+  maker_id INT,
+  user_id INT,
+  FOREIGN KEY (maker_id) REFERENCES makers(maker_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-CREATE TABLE maker (
-  id int unsigned AUTO_INCREMENT,
-  maker_name VARCHAR(100) NOT NULL,
-  maker_image VARCHAR(255),
-  PRIMARY KEY(id)
-);
+INSERT INTO users (username, email, password_hash) VALUES
+('user1', 'user1@example.com', 'hashed_password1'),
+('user2', 'user2@example.com', 'hashed_password2'),
+('user3', 'user3@example.com', 'hashed_password3');
 
+INSERT INTO makers (maker_name, maker_image) VALUES
+('SEIKO', 'seiko.png'),
+('CITIZEN', 'citizen.png'),
+('CASIO', 'casio.png');
 
-INSERT INTO maker (maker_name, maker_image) VALUES ("SEIKO", "seiko.png");
-
-INSERT INTO prefectures (prefecture_id, prefecture_name) VALUES
-(1, '北海道'),
-(2, '青森県');
-
-INSERT INTO municipalities (municipality_id, municipality_name, prefecture_id) VALUES
-(1, '札幌市', 1),
-(2, '青森市', 2);
-
-INSERT INTO clocks (clock_id, clock_name, address, latitude, longitude, description, municipality_id) VALUES
-(1, 'サンプル時計1', '北海道札幌市...', 43.062960, 141.354377, 'ここに時計の説明を記載します。', 1),
-(2, 'サンプル時計2', '青森県青森市...', 40.824623, 140.740001, 'ここに時計の説明を記載します。', 2);
+INSERT INTO clocks (clock_name, description, clock_image, latitude, longitude, maker_id, user_id) VALUES
+('Clock Tower A', 'A beautiful and historic clock tower.', 'clock_tower_a.jpg', 35.6895, 139.6917, 1, 1),
+('Clock Tower B', 'An iconic clock tower with stunning architecture.', 'clock_tower_b.jpg', 35.0116, 135.7681, 2, 2),
+('Clock Tower C', 'A modern and stylish clock tower.', 'clock_tower_c.jpg', 43.0629, 141.3544, 3, 3),
+('Clock Tower D', 'A small but charming clock tower.', 'clock_tower_d.jpg', 34.396381, 132.459794, 1, 1),
+('Clock Tower E', 'An impressive clock tower with a panoramic view.', 'clock_tower_e.jpg', 33.5901, 130.4017, 2, 2),
+('Clock Tower F', 'A historic clock tower with a fascinating backstory.', 'clock_tower_f.jpg', 35.861729, 139.645482, 3, 3),
+('Clock Tower G', 'A clock tower that lights up beautifully at night.', 'clock_tower_g.jpg', 35.4437, 139.638
