@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class Clock {
 
   private Integer id;
@@ -12,6 +10,11 @@ public class Clock {
   private String imagePath;
   private double latitude;
   private double longitude;
+
+
+  public Clock() {
+  }
+
 
   public Integer getId() {
     return id;

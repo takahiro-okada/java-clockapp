@@ -42,4 +42,4 @@ INSERT INTO clocks (clock_name, description, clock_image, latitude, longitude, m
 ('Clock Tower D', 'A small but charming clock tower.', 'clock_tower_d.jpg', 34.396381, 132.459794, 1, 1),
 ('Clock Tower E', 'An impressive clock tower with a panoramic view.', 'clock_tower_e.jpg', 33.5901, 130.4017, 2, 2),
 ('Clock Tower F', 'A historic clock tower with a fascinating backstory.', 'clock_tower_f.jpg', 35.861729, 139.645482, 3, 3),
-('Clock Tower G', 'A clock tower that lights up beautifully at night.', 'clock_tower_g.jpg', 35.4437, 139.638
+('Clock Tower G', 'A clock tower that lights up beautifully at night.', 'clock_tower_g.jpg', 35.4437, 139.6385, 1, 1);

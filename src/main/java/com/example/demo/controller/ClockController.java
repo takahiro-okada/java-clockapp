@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,8 +37,15 @@ public class ClockController {
     return clock;
   }
 
+  @RequestMapping("/api/clocks")
+  public ResponseEntity<List<Clock>> getClocks(@RequestParam(name = "name", required = false) String clockName) {
+    List<Clock> clocks = clockService.findAllClocks();
+    return ResponseEntity.ok(clocks);
+  }
+
   @PostMapping("/api/register")
-  public ResponseEntity<String> registerClock(@RequestParam("image") MultipartFile file, Clock clock) {
+  public ResponseEntity<String> registerClock(@RequestParam("image") MultipartFile file, @ModelAttribute
+  Clock clock) {
     try {
       String fileName = fileStorageService.storeFile(file);
       clock.setImagePath(fileName);

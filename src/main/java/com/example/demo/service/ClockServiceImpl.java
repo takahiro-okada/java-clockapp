@@ -20,6 +20,10 @@ public class ClockServiceImpl implements ClockService{
     this.fileStorageService = fileStorageService;
   }
 
+  @Override
+  public List<Clock> findAllClocks() {
+    return clockMapper.findAllClocks();
+  }
 
   @Override
   public List<Clock> findMakerClocks() {
