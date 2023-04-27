@@ -6,4 +6,7 @@ import java.util.List;
 public interface ClockService {
 
   List<Clock> findMakerClocks();
+
+  void registerClock(Clock clock);
+
 }

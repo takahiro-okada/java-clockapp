@@ -1,48 +1,92 @@
 package com.example.demo.entity;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Clock {
 
-  private int id;
-  private String clockName;
-  private String clockDescription;
-  private int makerId;
+  private Integer id;
+  private Integer makerId;
+  private Integer userId;
+  private String name;
+  private String description;
+  private String imagePath;
+  private double latitude;
+  private double longitude;
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public String getClockName() {
-    return clockName;
-  }
-
-  public void setClockName(String clockName) {
-    this.clockName = clockName;
-  }
-
-  public String getClockDescription() {
-    return clockDescription;
-  }
-
-  public void setClockDescription(String clockDescription) {
-    this.clockDescription = clockDescription;
-  }
-
-  public int getMakerId() {
+  public Integer getMakerId() {
     return makerId;
   }
 
-  public void setMakerId(int makerId) {
+  public void setMakerId(Integer makerId) {
     this.makerId = makerId;
   }
 
-  public Clock(int id, String clockName, String clockDescription, int makerId) {
-    this.id = id;
-    this.clockName = clockName;
-    this.clockDescription = clockDescription;
-    this.makerId = makerId;
+  public Integer getUserId() {
+    return userId;
   }
+
+  public void setUserId(Integer userId) {
+    this.userId = userId;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getImagePath() {
+    return imagePath;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
+  }
+
+  public double getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
+
+  public double getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
+
+  public Clock(Integer id, Integer makerId, Integer userId, String name, String description,
+               String imagePath, double latitude, double longitude) {
+    this.id = id;
+    this.makerId = makerId;
+    this.userId = userId;
+    this.name = name;
+    this.description = description;
+    this.imagePath = imagePath;
+    this.latitude = latitude;
+    this.longitude = longitude;
+  }
+
 }
