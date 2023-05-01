@@ -11,11 +11,6 @@ public class Clock {
   private double latitude;
   private double longitude;
 
-
-  public Clock() {
-  }
-
-
   public Integer getId() {
     return id;
   }

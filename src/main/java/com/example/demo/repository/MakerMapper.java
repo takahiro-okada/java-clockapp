@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface MakerMapper {
 
-  @Select("SELECT * FROM maker")
+  @Select("SELECT * FROM makers")
   List<Maker> findAll();
 
-  @Insert("INSERT INTO maker (maker_name, maker_image) VALUES (#{name}, #{imageName})")
+  @Insert("INSERT INTO makers (maker_name, maker_image) VALUES (#{name}, #{imageName})")
   Maker saveMaker(String name, String imageName);
 
 }

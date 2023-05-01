@@ -36,10 +36,6 @@ INSERT INTO makers (maker_name, maker_image) VALUES
 ('CASIO', 'casio.png');
 
 INSERT INTO clocks (clock_name, description, clock_image, latitude, longitude, maker_id, user_id) VALUES
-('Clock Tower A', 'A beautiful and historic clock tower.', 'clock_tower_a.jpg', 35.6895, 139.6917, 1, 1),
-('Clock Tower B', 'An iconic clock tower with stunning architecture.', 'clock_tower_b.jpg', 35.0116, 135.7681, 2, 2),
-('Clock Tower C', 'A modern and stylish clock tower.', 'clock_tower_c.jpg', 43.0629, 141.3544, 3, 3),
-('Clock Tower D', 'A small but charming clock tower.', 'clock_tower_d.jpg', 34.396381, 132.459794, 1, 1),
-('Clock Tower E', 'An impressive clock tower with a panoramic view.', 'clock_tower_e.jpg', 33.5901, 130.4017, 2, 2),
-('Clock Tower F', 'A historic clock tower with a fascinating backstory.', 'clock_tower_f.jpg', 35.861729, 139.645482, 3, 3),
-('Clock Tower G', 'A clock tower that lights up beautifully at night.', 'clock_tower_g.jpg', 35.4437, 139.6385, 1, 1);
+('普通の時計', 'テキストが入ります。テキストが入ります。テキストが入ります。', 'clock1.jpg', 35.6895, 139.6917, 1, 1),
+('とだがわこどもランドの時計', '壊れていました。', 'clock2.jpg', 35.0116, 135.7681, 2, 2),
+('普通の時計', 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。', 'clock1.jpg', 43.0629, 141.3544, 3, 3);
