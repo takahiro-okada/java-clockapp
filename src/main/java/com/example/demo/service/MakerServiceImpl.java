@@ -27,22 +27,19 @@ public class MakerServiceImpl implements MakerService{
 
   @Override
   public String saveImage(MultipartFile image) {
-    // 画像ファイルの保存先ディレクトリ
-    String uploadDirectory = "./uploads/";
+    String uploadDirectory = "uploads/";
     Path uploadPath = Paths.get(uploadDirectory);
 
-    // 画像ファイルの名前を取得し、ファイル名を生成
     String imageName = image.getOriginalFilename();
     Path targetLocation = uploadPath.resolve(imageName);
 
     try {
-      // 画像ファイルを保存先にコピー
       Files.copy(image.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
     } catch (IOException e) {
       throw new RuntimeException("画像の保存に失敗しました。", e);
     }
 
-    return imageName; // 画像ファイル名を返す
+    return imageName;
   }
 
   @Override

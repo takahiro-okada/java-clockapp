@@ -7,6 +7,8 @@ public interface ClockService {
 
   List<Clock> findMakerClocks();
 
+  List<Clock> findAllClocks();
+
   void registerClock(Clock clock);
 
 }

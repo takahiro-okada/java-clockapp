@@ -36,6 +36,12 @@ public class ClockController {
     return clock;
   }
 
+  @RequestMapping("/api/clocks")
+  public ResponseEntity<List<Clock>> getClocks(@RequestParam(name = "name", required = false) String clockName) {
+    List<Clock> clocks = clockService.findAllClocks();
+    return ResponseEntity.ok(clocks);
+  }
+
   @PostMapping("/api/register")
   public ResponseEntity<String> registerClock(@RequestParam("image") MultipartFile file, Clock clock) {
     try {

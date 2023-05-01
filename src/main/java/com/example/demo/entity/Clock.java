@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class Clock {
 
   private Integer id;
